@@ -1,0 +1,452 @@
+{UTF-8}
+infrastructure development  = A FUNCTION OF( infrastructure demand,quality of policies\
+		)
+	~	
+	~		|
+
+acquifier puncture  = A FUNCTION OF( tunneling of mountain)
+	~	
+	~		|
+
+debris  = A FUNCTION OF( infrastructure development)
+	~	
+	~		|
+
+migration  = A FUNCTION OF( cracks in buildings)
+	~	
+	~		|
+
+soil consolidation  = A FUNCTION OF( amount of seepage water underground,pressure on land\
+		,seep underground)
+	~	
+	~		|
+
+Population of Joshimath  = A FUNCTION OF( better economy,migration)
+	~	
+	~		|
+
+pressure on land  = A FUNCTION OF( debris)
+	~	
+	~		|
+
+Land Subsidence  = A FUNCTION OF( acquifier puncture,density of soil,shift of the boulders\
+		,vulnerability to landslide)
+	~	
+	~		|
+
+vulnerability to landslide  = A FUNCTION OF( natural erosion of soil by rivers,"quality of eco-system"\
+		,quality of foundation,removal of supporting boulders,scouring of hill,standard of ecology\
+		)
+	~	
+	~		|
+
+"quality of eco-system"  = A FUNCTION OF( climate change,flash floods,land sliding,reactivation of fault lines\
+		)
+	~	
+	~		|
+
+quality of foundation  = A FUNCTION OF( sitting atop angular ancient debris,use of explosives to remove debris\
+		)
+	~	
+	~		|
+
+removal of supporting boulders  = A FUNCTION OF( removal of hills,tunneling of mountain\
+		)
+	~	
+	~		|
+
+scouring of hill  = A FUNCTION OF( drainage water)
+	~	
+	~		|
+
+seep underground  = A FUNCTION OF( water in streams uphill)
+	~	
+	~		|
+
+natural erosion of soil by rivers  = A FUNCTION OF( )
+	~	
+	~		|
+
+water in streams uphill  = A FUNCTION OF( quantity of rains over short periods)
+	~	
+	~		|
+
+water and debris into tunnel due to floods  = A FUNCTION OF( flash floods)
+	~	
+	~		|
+
+tunneling of mountain  = A FUNCTION OF( "construction of Hydro-power plant")
+	~	
+	~		|
+
+use of explosives to remove debris  = A FUNCTION OF( water and debris into tunnel due to floods\
+		)
+	~	
+	~		|
+
+amount of seepage water underground  = A FUNCTION OF( seepage,top soil loss)
+	~	
+	~		|
+
+seepage  = A FUNCTION OF( drainage water)
+	~	
+	~		|
+
+climate change  = A FUNCTION OF( )
+	~	
+	~		|
+
+quality of policies  = A FUNCTION OF( short term profits)
+	~	
+	~		|
+
+cracks in buildings  = A FUNCTION OF( Land Subsidence)
+	~	
+	~		|
+
+removal of hills  = A FUNCTION OF( "construction of Hydro-power plant","road, hotel and houses construction"\
+		)
+	~	
+	~		|
+
+drainage water  = A FUNCTION OF( ground water pumping,quantity of rains over short periods\
+		)
+	~	
+	~		|
+
+earthquakes  = A FUNCTION OF( seismic zone V region)
+	~	
+	~		|
+
+shift of the boulders  = A FUNCTION OF( material loosensing locked between boulders)
+	~	
+	~		|
+
+flash floods  = A FUNCTION OF( quantity of rains over short periods)
+	~	
+	~		|
+
+sitting atop angular ancient debris  = A FUNCTION OF( )
+	~	
+	~		|
+
+standard of ecology  = A FUNCTION OF( quality of policies)
+	~	
+	~		|
+
+top soil loss  = A FUNCTION OF( "road, hotel and houses construction")
+	~	
+	~		|
+
+material loosensing locked between boulders  = A FUNCTION OF( amount of seepage water underground\
+		)
+	~	
+	~		|
+
+seismic zone V region  = A FUNCTION OF( )
+	~	
+	~		|
+
+reactivation of fault lines  = A FUNCTION OF( earthquakes)
+	~	
+	~		|
+
+short term profits  = A FUNCTION OF( )
+	~	
+	~		|
+
+quantity of rains over short periods  = A FUNCTION OF( deforestation)
+	~	
+	~		|
+
+density of soil  = A FUNCTION OF( compaction of underground sediments)
+	~	
+	~		|
+
+better economy  = A FUNCTION OF( job opportunities)
+	~	
+	~		|
+
+compaction of underground sediments  = A FUNCTION OF( ground water pumping,soil consolidation\
+		)
+	~	
+	~		|
+
+"construction of Hydro-power plant"  = A FUNCTION OF( infrastructure development)
+	~	
+	~		|
+
+deforestation  = A FUNCTION OF( infrastructure development)
+	~	
+	~		|
+
+ground water pumping  = A FUNCTION OF( infrastructure development)
+	~	
+	~		|
+
+infrastructure demand  = A FUNCTION OF( Population of Joshimath,tourism)
+	~	
+	~		|
+
+job opportunities  = A FUNCTION OF( tourism)
+	~	
+	~		|
+
+land sliding  = A FUNCTION OF( )
+	~	
+	~		|
+
+"road, hotel and houses construction"  = A FUNCTION OF( infrastructure development)
+	~	
+	~		|
+
+tourism  = A FUNCTION OF( "road, hotel and houses construction")
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,41,0
+10,1,Land Subsidence,1875,758,52,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,2,tourism,1349,624,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,3,job opportunities,1307,545,54,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,4,better economy,1437,490,49,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,5,2,3,1,0,43,0,0,192,0,-1--1--1,,1|(1322,599)|
+1,6,3,4,1,0,43,0,0,192,0,-1--1--1,,1|(1347,500)|
+10,7,seepage,1491,1218,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,8,infrastructure development,1415,833,44,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,9,"road, hotel and houses construction",1194,736,63,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,10,Population of Joshimath,1545,609,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,11,"quality of eco-system",1963,468,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,compaction of underground sediments,1637,988,45,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,13,ground water pumping,1486,951,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,14,density of soil,1784,884,58,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,14,1,1,0,43,0,0,192,0,-1--1--1,,1|(1844,842)|
+1,16,13,12,1,0,43,0,0,192,0,-1--1--1,,1|(1556,983)|
+10,17,infrastructure demand,1474,717,44,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,18,10,17,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,19,17,8,1,0,43,0,0,192,0,-1--1--1,,1|(1467,767)|
+1,20,8,13,1,0,43,0,0,192,0,-1--1--1,,1|(1434,892)|
+1,21,8,9,1,0,43,0,0,192,0,-1--1--1,,1|(1278,815)|
+10,22,deforestation,1193,1004,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,23,2,17,1,0,43,0,0,192,0,-1--1--1,,1|(1428,635)|
+1,24,9,2,1,0,43,0,0,192,0,-1--1--1,,1|(1248,661)|
+1,25,8,22,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,26,soil consolidation,1645,1100,55,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,26,12,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,28,flash floods,2267,596,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,29,earthquakes,2172,881,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,30,29,62,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,31,land sliding,2141,495,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,31,11,1,0,45,0,0,192,0,-1--1--1,,1|(2063,460)|
+10,33,"construction of Hydro-power plant",839,1039,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,34,4,10,1,0,43,0,0,192,0,-1--1--1,,1|(1498,542)|
+12,35,0,1420,542,20,20,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R1
+12,36,0,1435,593,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Economy as population driver
+12,37,0,1042,623,37,37,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B4
+12,38,0,1369,762,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Tourism and urbanization
+12,39,0,1620,859,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Population balancing land subsidence
+1,40,8,33,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,41,12,14,1,0,43,0,0,192,0,-1--1--1,,1|(1726,947)|
+10,42,drainage water,1377,1106,47,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,13,42,1,0,43,0,0,192,0,-1--1--1,,1|(1390,1003)|
+1,44,42,7,1,0,45,0,0,192,0,-1--1--1,,1|(1421,1177)|
+10,45,amount of seepage water underground,1706,1246,52,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,46,7,45,1,0,45,0,0,193,0,-1--1--1,,1|(1595,1267)|
+1,47,45,26,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,48,material loosensing locked between boulders,1880,1078,61,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,49,shift of the boulders,1902,858,63,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,50,45,48,1,0,43,0,0,192,0,-1--1--1,,1|(1844,1186)|
+1,51,48,49,1,0,43,0,0,192,0,-1--1--1,,1|(1914,972)|
+1,52,49,1,1,0,43,0,0,192,0,-1--1--1,,1|(1907,801)|
+10,53,quantity of rains over short periods,1236,1122,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,54,53,42,1,0,43,0,0,192,0,-1--1--1,,1|(1299,1140)|
+10,55,cracks in buildings,1775,654,42,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,56,1,55,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,57,short term profits,2280,130,55,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,58,quality of policies,1996,101,55,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,59,standard of ecology,1966,216,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,60,57,58,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,61,58,59,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,62,reactivation of fault lines,2136,757,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,63,62,11,1,0,45,0,0,192,0,-1--1--1,,1|(2035,620)|
+10,64,seismic zone V region,2133,1005,47,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,65,64,29,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,66,53,28,1,0,43,0,0,192,0,-1--1--1,,1|(2184,1203)|
+1,67,22,53,1,0,43,0,0,192,0,-1--1--1,,1|(1205,1074)|
+10,68,sitting atop angular ancient debris,2040,313,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,69,quality of foundation,1923,412,52,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,70,removal of hills,1283,446,50,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,71,9,70,1,0,43,0,0,192,0,-1--1--1,,1|(1213,585)|
+10,72,vulnerability to landslide,1793,524,47,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,73,72,1,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,74,removal of supporting boulders,1500,349,63,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,75,70,74,1,0,43,0,0,192,0,-1--1--1,,1|(1377,382)|
+1,76,74,72,1,0,43,0,0,192,0,-1--1--1,,1|(1648,407)|
+10,77,top soil loss,1113,1281,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,78,9,77,1,0,43,0,0,192,0,-1--1--1,,1|(996,882)|
+1,79,77,45,1,0,43,0,0,192,0,-1--1--1,,1|(1446,1402)|
+10,80,debris,1016,1044,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,81,59,72,1,0,45,0,0,192,0,-1--1--1,,1|(1876,356)|
+1,82,68,69,1,0,45,0,0,192,0,-1--1--1,,1|(1985,354)|
+1,83,69,72,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,84,33,70,1,0,43,0,0,192,0,-1--1--1,,1|(876,649)|
+10,85,climate change,2195,667,48,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,86,85,11,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,87,11,72,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+12,88,0,1620,461,53,53,4,7,0,32,-1,0,0,0,0-0-0,0-0-0,B2|||0-0-0,0,0,0,0,0,0
+B2
+12,89,0,1625,541,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+boulders removal causes subsidence
+12,90,0,1500,1033,45,45,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B8
+12,91,0,1787,972,45,45,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B10
+12,92,0,1500,1120,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+impact of groundwater pumping and poor drainage
+12,93,0,1774,1037,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+drainage moves boulders
+12,94,0,2130,1092,47,47,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R4
+12,95,0,2088,1165,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+rains cause floods
+12,96,0,1342,953,42,42,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R3
+12,97,0,1319,1014,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+deforestation affects drainage
+12,98,0,1114,1109,49,49,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B6
+12,99,0,1113,1178,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+constructiuon causes more seepage
+12,100,0,1036,720,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Hydro-power plant removes hills
+10,101,water and debris into tunnel due to floods,2296,464,56,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,102,28,101,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,103,use of explosives to remove debris,2282,285,62,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,104,101,103,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,105,103,69,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,106,28,11,1,0,43,0,0,192,0,-1--1--1,,1|(2118,517)|
+10,107,tunneling of mountain,933,306,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,108,33,107,1,0,43,0,0,192,0,-1--1--1,,1|(738,651)|
+1,109,107,74,1,0,43,0,0,192,0,-1--1--1,,1|(1232,141)|
+10,110,scouring of hill,1866,1321,48,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,111,42,110,1,0,43,0,0,192,0,-1--1--1,,1|(1536,1341)|
+1,112,110,72,1,0,43,0,0,192,0,-1--1--1,,1|(2026,829)|
+10,113,water in streams uphill,1507,1629,52,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,114,53,113,1,0,43,0,0,192,0,-1--1--1,,1|(1243,1397)|
+10,115,seep underground,1867,1548,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,116,113,115,1,0,43,0,0,193,0,-1--1--1,,1|(1673,1631)|
+1,117,115,26,1,0,43,0,0,192,0,-1--1--1,,1|(1793,1322)|
+10,118,natural erosion of soil by rivers,1852,172,56,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,119,118,72,1,0,43,0,0,192,0,-1--1--1,,1|(1790,334)|
+12,120,0,1987,922,44,44,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B11
+12,121,0,1970,999,64,31,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+drainage scouring the hills
+12,122,0,1639,1485,63,63,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B9
+12,123,0,1616,1572,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Rains causing seep in uphills
+12,124,0,1107,321,56,56,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B12
+12,125,0,1105,401,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Tunneling of mountain removes boulers
+12,126,0,2187,445,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+floods affecting foundation
+12,127,0,2182,378,45,45,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B5
+12,128,0,1346,704,37,37,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R2
+10,129,acquifier puncture,1596,98,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,130,107,129,1,0,43,0,0,192,0,-1--1--1,,1|(1213,54)|
+1,131,129,1,1,0,43,0,0,192,0,-1--1--1,,1|(1831,330)|
+10,132,migration,1665,617,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,133,55,132,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+1,134,132,10,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+1,135,8,80,0,0,43,0,0,192,0,-1--1--1,,1|(0,0)|
+10,136,pressure on land,960,1451,53,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,137,80,136,1,0,43,0,0,192,0,-1--1--1,,1|(881,1237)|
+1,138,136,26,1,0,43,0,0,192,0,-1--1--1,,1|(1404,1526)|
+12,139,0,1602,210,56,56,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B3
+12,140,0,1600,290,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+aquifier puncture from tunneling
+12,141,0,1076,1360,49,49,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B7
+12,142,0,1075,1429,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+debris causing soil conslidation
+10,143,quality of policies,1153,851,36,21,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,144,143,8,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+12,145,0,1615,767,45,45,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B1
+///---\\\
+:L<%^E!@
+5:vulnerability to landslide
+19:41,0
+24:0
+25:0
+26:0
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Lucida Grande|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

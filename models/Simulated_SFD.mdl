@@ -1,0 +1,306 @@
+{UTF-8}
+********************************************************
+	.simple 11th april sfd v1.1.6 migration rate 0.2
+********************************************************~
+		<?xml version="1.0" encoding="UTF-8"?>
+		<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+		  <paragraphlayout textcolor="#000000" fontpointsize="13" fontfamily="72" \
+		fontstyle="90" fontweight="400" fontunderlined="0" \
+		fontface=".AppleSystemUIFont" alignment="1" parspacingafter="10" \
+		parspacingbefore="0" linespacing="10" margin-left="5,4098" \
+		margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+		    <paragraph>
+		      <text></text>
+		    </paragraph>
+		  </paragraphlayout>
+		</richtext>
+		
+	|
+
+immigration lookup(
+	[(0,0)-(30,1000)],(0,1000),(0.977597,814.685),(2.50509,632.867),(4.21589,461.538),(5.37678\
+		,300.699),(7.08758,153.846),(10.1426,76.9231),(13.0143,48.951),(15.947,45.4545),(19.0631\
+		,27.972),(26.0285,0),(29.8167,3.49652),(30,20.979))
+	~	people/year
+	~	\!land subsidence cm\!immigration rate people/year
+	|
+
+********************************************************
+	.simple 11th april sfd
+********************************************************~
+		<?xml version="1.0" encoding="UTF-8"?>
+		<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+		  <paragraphlayout textcolor="#FFFFFF" fontpointsize="13" fontfamily="72" \
+		fontstyle="90" fontweight="400" fontunderlined="0" \
+		fontface=".AppleSystemUIFont" alignment="1" parspacingafter="10" \
+		parspacingbefore="0" linespacing="10" margin-left="5,4098" \
+		margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+		    <paragraph>
+		      <text></text>
+		    </paragraph>
+		  </paragraphlayout>
+		</richtext>
+	|
+
+migration lookup(
+	[(0,0)-(30,0.3)],(0,0.07),(30,0.3))
+	~	people/year
+	~	migration percent is at max 20%
+	|
+
+land subsidence lookup(
+	[(0,8)-(4677,30)],(0,8.07692),(438.171,8.84615),(1028.75,10.2308),(1657.43,11.6154),\
+		(2419.47,14.0769),(3105.3,17.0769),(3686.35,20.6154),(4219.78,24.3077),(4629.37,29.7692\
+		))
+	~	cm
+	~	\!infrastructure area sq km\!land subsidence cm
+	|
+
+********************************************************
+	.
+********************************************************~
+		<?xml version="1.0" encoding="UTF-8"?>
+		<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+		  <paragraphlayout textcolor="#000000" fontpointsize="13" fontfamily="72" \
+		fontstyle="90" fontweight="400" fontunderlined="0" \
+		fontface=".AppleSystemUIFont" alignment="1" parspacingafter="10" \
+		parspacingbefore="0" linespacing="10" margin-left="5,4098" \
+		margin-right="5,4098" margin-top="5,4098" margin-bottom="5,4098">
+		    <paragraph>
+		      <text></text>
+		    </paragraph>
+		  </paragraphlayout>
+		</richtext>
+	|
+
+Land subsidence=
+	land subsidence rate/100
+	~	meter/year
+	~		|
+
+land subsidence rate=
+	land subsidence lookup(Infrastructure Area)
+	~	cm/year
+	~	max(  7/ ( 100*1000 ) , Infrastructure Area / (100 * 1000) )
+	|
+
+immigration rate=
+	immigration lookup(Land subsidence*100)
+	~	people/year
+	~		|
+
+migration rate=
+	migration lookup(Land subsidence*100)
+	~	people/year
+	~	convert meter to mm
+	|
+
+Immigration=
+	immigration rate
+	~	people/year
+	~		|
+
+birth rate=
+	16.42/1000
+	~	people/people/year
+	~		|
+
+births=
+	Population in Joshimath*birth rate
+	~	people/year
+	~		|
+
+construction area=
+	max(0, construction rate*Infrastructure Area/1000)
+	~	sq kilometer/year
+	~	min( 1, max(0, construction rate*Infrastructure Area))
+	|
+
+construction rate=
+	max(0, Population in Joshimath/10000)
+	~	sq kilometer/year
+	~	density: 10 people sq. km
+	|
+
+death rate=
+	9.42/1000
+	~	people/people/year
+	~		|
+
+deaths=
+	death rate*Population in Joshimath
+	~	people/year
+	~		|
+
+demolition area=
+	max(0, demolition rate*Infrastructure Area)
+	~	sq kilometer/year
+	~		|
+
+demolition rate=
+	0.003
+	~	kilometer square/year
+	~		|
+
+Infrastructure Area= INTEG (
+	construction area-demolition area,
+		100)
+	~	sq kilometer [?,2000]
+	~		|
+
+Land Elevation= INTEG (
+	0-Land subsidence,
+		1875)
+	~	meter
+	~		|
+
+outstation migration=
+	0.1*Population in Joshimath*migration rate
+	~	people/year
+	~		|
+
+Population in Joshimath= INTEG (
+	births+Immigration-deaths-outstation migration,
+		25000)
+	~	people
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 200
+	~	year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,Population in Joshimath,246,212,43,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,2,Infrastructure Area,365,510,59,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,3,Land Elevation,580,378,46,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,4,48,786,378,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,5,7,3,100,0,0,22,0,192,0,-1--1--1,,1|(660,378)|
+1,6,7,4,4,0,0,22,0,192,0,-1--1--1,,1|(741,378)|
+11,7,0,701,378,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,8,Land subsidence,701,409,52,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,9,48,70,205,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,10,12,9,100,0,0,22,0,192,0,-1--1--1,,1|(107,205)|
+1,11,12,1,4,0,0,22,0,192,0,-1--1--1,,1|(175,205)|
+11,12,0,141,205,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,13,births,141,236,43,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,14,48,443,212,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,17,1,100,0,0,22,0,192,0,-1--1--1,,1|(322,212)|
+1,16,17,14,4,0,0,22,0,192,0,-1--1--1,,1|(400,212)|
+11,17,0,361,212,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,deaths,361,243,43,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,19,48,248,90,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,20,22,19,100,0,0,22,0,192,0,-1--1--1,,1|(248,117)|
+1,21,22,1,4,0,0,22,0,192,0,-1--1--1,,1|(248,169)|
+11,22,0,248,143,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,23,Immigration,299,143,43,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,24,48,241,370,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,25,27,1,100,0,0,22,0,192,0,-1--1--1,,1|(241,271)|
+1,26,27,24,4,0,0,22,0,192,0,-1--1--1,,1|(241,340)|
+11,27,0,241,313,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,28,outstation migration,313,313,64,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,29,1,13,1,0,0,0,0,192,0,-1--1--1,,1|(202,268)|
+1,30,1,18,1,0,0,0,0,192,0,-1--1--1,,1|(295,250)|
+12,31,48,120,506,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,34,31,100,0,0,22,0,192,0,-1--1--1,,1|(171,506)|
+1,33,34,2,4,0,0,22,0,192,0,-1--1--1,,1|(265,506)|
+11,34,0,218,506,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,35,construction area,218,537,54,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,36,48,584,510,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,37,39,2,100,0,0,22,0,192,0,-1--1--1,,1|(458,510)|
+1,38,39,36,4,0,0,22,0,192,0,-1--1--1,,1|(539,510)|
+11,39,0,499,510,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,40,demolition area,499,541,49,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,41,birth rate,120,310,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,42,death rate,506,256,43,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,41,13,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,44,42,18,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,45,2,40,1,0,0,0,0,192,0,-1--1--1,,1|(432,554)|
+1,46,2,35,1,0,0,0,0,192,0,-1--1--1,,1|(290,570)|
+10,47,immigration rate,438,53,55,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,48,47,23,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,49,1,28,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,50,construction rate,139,626,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,51,demolition rate,516,639,48,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,52,50,35,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,53,51,40,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,54,migration rate,334,359,45,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,55,54,28,1,0,0,0,0,192,0,-1--1--1,,1|(272,348)|
+1,56,8,54,1,0,0,0,0,192,0,-1--1--1,,1|(520,422)|
+10,57,land subsidence rate,602,471,51,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,58,2,57,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,59,57,8,1,0,0,0,0,192,0,-1--1--1,,1|(672,461)|
+1,60,1,50,1,0,0,0,0,192,0,-1--1--1,,1|(184,395)|
+10,61,land subsidence lookup,822,489,51,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,62,61,57,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,63,migration lookup,323,435,54,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,64,63,54,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,65,8,47,1,0,0,0,0,192,0,-1--1--1,,1|(724,139)|
+10,66,immigration lookup,497,139,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,67,66,47,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+///---\\\
+:L<%^E!@
+1:current.vdfx
+4:Time
+5:Infrastructure Area
+9:current
+19:100,0
+24:0
+25:200
+26:200
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Lucida Grande|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
